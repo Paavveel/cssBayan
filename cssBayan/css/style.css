@@ -25,6 +25,10 @@ body {
   font-size: 3em;
 }
 
+.tab-container {
+  color: dodgerblue;
+}
+
 .tab {
   border-top: 0.12em solid rgba(0, 0, 0, 0.1);
 }
@@ -39,6 +43,27 @@ input[type='radio']:checked ~ .tab__content .tab__img {
   margin: 0 0 1.5em 0;
   opacity: 1;
 }
+input[type='radio']:checked ~ .tab__content .tab__close-icon {
+  transform: rotate(45deg);
+}
+
+input[type='radio']:checked ~ .tab__content .tab__title {
+  color: black;
+}
+
+input[type='radio']:active ~ .tab__content .tab__title,
+input[type='radio']:active ~ .tab__content .tab__close-icon,
+input[type='radio']:active ~ .tab__content .tab__img {
+  opacity: 0.5;
+}
+
+input[type='radio']:active ~ .tab__content .tab__title {
+  color: dodgerblue;
+}
+
+input[type='radio']:active ~ .tab__content .tab__close-icon {
+  background-image: url('../assets/icons/close-blue.svg');
+}
 
 .tab__content {
   display: flex;
@@ -46,10 +71,28 @@ input[type='radio']:checked ~ .tab__content .tab__img {
   cursor: pointer;
 }
 
+.tab__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.tab__close-icon {
+  background-image: url('../assets/icons/close.svg');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 2em;
+  height: 2em;
+  transition: transform 0.3s, background-image 0.3s, visibility 0.1s ease-out;
+}
+
 .tab__title {
   font-size: 1.7em;
+  color: dodgerblue;
   font-weight: 600;
   margin: 0.8em 0;
+  transition: color 0.3s, opacity 0.3s;
 }
 
 .tab__img {
@@ -61,7 +104,7 @@ input[type='radio']:checked ~ .tab__content .tab__img {
   background-position: center;
   background-repeat: no-repeat;
   opacity: 0.5;
-  transition: opacity 0.2s 0.1s, height 0.2s ease-out, visibility 0.1s ease-out;
+  transition: opacity 0.3s, height 0.2s ease-out, visibility 0.1s ease-out;
 }
 
 .tab__img--bg1 {
@@ -81,11 +124,30 @@ input[type='radio']:checked ~ .tab__content .tab__img {
 }
 
 @media (min-width: 821px) {
+  .tab-container:hover .tab__title {
+    color: black;
+  }
+
+  .tab-container:hover .tab__close-icon {
+    visibility: visible;
+  }
+
+  .tab__close-icon {
+    visibility: hidden;
+  }
+
+  input[type='radio']:active ~ .tab__content .tab__title {
+    color: dodgerblue;
+  }
+
   .tab__content:hover .tab__img {
     visibility: visible;
     height: 26em;
     margin: 0 0 1.5em 0;
     opacity: 1;
+  }
+  .tab__content:hover .tab__close-icon {
+    transform: rotate(45deg);
   }
 }
 
@@ -114,6 +176,11 @@ input[type='radio']:checked ~ .tab__content .tab__img {
 
   .tab__title {
     font-size: 1.1em;
+  }
+
+  .tab__close-icon {
+    width: 1.2em;
+    height: 1.2em;
   }
 
   input[type='radio']:checked ~ .tab__content .tab__img {
