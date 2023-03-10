@@ -33,8 +33,7 @@ input[type='radio'] {
   display: none;
 }
 
-input[type='radio']:checked ~ .tab__content > .tab__img,
-.tab__content:hover > .tab__img {
+input[type='radio']:checked ~ .tab__content .tab__img {
   visibility: visible;
   height: 26em;
   margin: 0 0 1.5em 0;
@@ -81,6 +80,15 @@ input[type='radio']:checked ~ .tab__content > .tab__img,
   background-image: url('../assets/img/dom\ and\ jquery.jpg');
 }
 
+@media (min-width: 821px) {
+  .tab__content:hover .tab__img {
+    visibility: visible;
+    height: 26em;
+    margin: 0 0 1.5em 0;
+    opacity: 1;
+  }
+}
+
 @media (max-width: 820px) {
   .header__title {
     font-size: 2.5em;
@@ -90,8 +98,7 @@ input[type='radio']:checked ~ .tab__content > .tab__img,
     font-size: 1.5em;
   }
 
-  input[type='radio']:checked ~ .tab__content > .tab__img,
-  .tab__content:hover > .tab__img {
+  input[type='radio']:checked ~ .tab__content .tab__img {
     height: 20em;
   }
 }
@@ -109,8 +116,7 @@ input[type='radio']:checked ~ .tab__content > .tab__img,
     font-size: 1.1em;
   }
 
-  input[type='radio']:checked ~ .tab__content > .tab__img,
-  .tab__content:hover > .tab__img {
+  input[type='radio']:checked ~ .tab__content .tab__img {
     height: 12em;
   }
 }
