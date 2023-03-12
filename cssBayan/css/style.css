@@ -25,10 +25,6 @@ body {
   font-size: 3em;
 }
 
-.tab-container {
-  color: dodgerblue;
-}
-
 .tab {
   border-top: 0.12em solid rgba(0, 0, 0, 0.1);
 }
@@ -40,7 +36,6 @@ input[type='radio'] {
 input[type='radio']:checked ~ .tab__content .tab__img {
   visibility: visible;
   height: 26em;
-  margin: 0 0 1.5em 0;
   opacity: 1;
 }
 
@@ -70,6 +65,7 @@ input[type='radio']:active ~ .tab__content .tab__close-icon {
 .tab__content {
   display: flex;
   flex-direction: column;
+  margin-bottom: 0.8em;
   cursor: pointer;
 }
 
@@ -147,7 +143,6 @@ input[type='radio']:active ~ .tab__content .tab__close-icon {
   .tab__content:hover .tab__img {
     visibility: visible;
     height: 26em;
-    margin: 0 0 1.5em 0;
     opacity: 1;
   }
 }
