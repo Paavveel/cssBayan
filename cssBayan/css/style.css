@@ -43,7 +43,9 @@ input[type='radio']:checked ~ .tab__content .tab__img {
   margin: 0 0 1.5em 0;
   opacity: 1;
 }
+
 input[type='radio']:checked ~ .tab__content .tab__close-icon {
+  background-image: url('../assets/icons/close.svg');
   transform: rotate(45deg);
 }
 
@@ -78,7 +80,7 @@ input[type='radio']:active ~ .tab__content .tab__close-icon {
 }
 
 .tab__close-icon {
-  background-image: url('../assets/icons/close.svg');
+  background-image: url('../assets/icons/close-blue.svg');
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
@@ -129,6 +131,7 @@ input[type='radio']:active ~ .tab__content .tab__close-icon {
   }
 
   .tab-container:hover .tab__close-icon {
+    background-image: url('../assets/icons/close.svg');
     visibility: visible;
   }
 
